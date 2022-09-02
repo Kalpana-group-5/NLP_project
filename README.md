@@ -2,24 +2,24 @@
 
 # <a name="top"></a>NLP Project
 ![]()
-
+### Kalpana group 5
 by: Daniel Ford, Glady Barrios, Kevin Smith
 
 <p>
   <a href="https://github.com/DanielFordHUB" target="_blank">
-    <img alt="Matthew" src="https://img.shields.io/github/followers/mdalton87?label=Follow_Matt&style=social" />
+    <img alt="Daniel" src="https://img.shields.io/github/followers/DanielFordHUB?label=Follow_Daniel&style=social" />
   </a>
 </p>
 
 <p>
   <a href="https://github.com/GladyBarrios" target="_blank">
-    <img alt="Matthew" src="https://img.shields.io/github/followers/mdalton87?label=Follow_Matt&style=social" />
+    <img alt="Glady" src="https://img.shields.io/github/followers/GladyBarrios?label=Follow_Glady&style=social" />
   </a>
 </p>
 
 <p>
   <a href="https://github.com/kevin-mal-smith" target="_blank">
-    <img alt="Matthew" src="https://img.shields.io/github/followers/mdalton87?label=Follow_Matt&style=social" />
+    <img alt="Kevin" src="https://img.shields.io/github/followers/kevin-mal-smith?label=Follow_Kevin&style=social" />
   </a>
 </p>
 
