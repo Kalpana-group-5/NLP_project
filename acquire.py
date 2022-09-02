@@ -28,7 +28,7 @@ def fetch_github_repos(num_pages):
     # so we need to increment the p= parameter to go to each subsequent page
     for i in range(1,num_pages+1):
         # add a sleep amount of random time so that we don't get HTTP 429s
-        time.sleep(100000)
+        time.sleep(2.5)
         headers = {'User-Agent': 'Codeup Data Science'} # Some websites don't accept the pyhon-requests default user-agent
         url = f'https://github.com/search?l=&p={i}&q=spotify+filename%3AREADME.md+filename%3Areadme.md&ref=advsearch&type=Repositories'
         response = get(url, headers=headers)
@@ -37,7 +37,7 @@ def fetch_github_repos(num_pages):
         # each page has 10 results. Let's loop through and find each instance of page element element = 'a' class = 'v-align-middle'
         links = soup.find_all('a', class_='v-align-middle')
         for repo_link in links:
-            time.sleep(random.random())
+            time.sleep(2.5)
             repo_name = repo_link.text
             # add it to our output array
             items_list.append(repo_name)
