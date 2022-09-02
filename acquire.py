@@ -18,7 +18,7 @@ from requests import get
 import pandas as pd
 from bs4 import BeautifulSoup
 import time
-import random
+
 
 # goes to github and pages through the most forked repos, grabbing the 'num_pages' number of pages
 def fetch_github_repos(num_pages):
@@ -28,9 +28,9 @@ def fetch_github_repos(num_pages):
     # so we need to increment the p= parameter to go to each subsequent page
     for i in range(1,num_pages+1):
         # add a sleep amount of random time so that we don't get HTTP 429s
-        time.sleep(random.random())
+        time.sleep(100000)
         headers = {'User-Agent': 'Codeup Data Science'} # Some websites don't accept the pyhon-requests default user-agent
-        url = f'https://github.com/search?o=desc&p={i}&q=spotify&type=Repositories'
+        url = f'https://github.com/search?l=&p={i}&q=spotify+filename%3AREADME.md+filename%3Areadme.md&ref=advsearch&type=Repositories'
         response = get(url, headers=headers)
         soup = BeautifulSoup(response.content, 'html.parser')
 
