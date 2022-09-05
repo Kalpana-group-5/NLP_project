@@ -25,21 +25,28 @@ by: Daniel Ford, Glady Barrios, Kevin Smith
 
 ***
 [[Project Description](#project_description)]
+[[Project Goal](#project_goal)]
 [[Project Planning](#planning)]
 [[Key Findings](#findings)]
 [[Data Dictionary](#dictionary)]
 [[Data Acquire and Prep](#wrangle)]
 [[Data Exploration](#explore)]
-[[Statistical Analysis](#stats)]
 [[Modeling](#model)]
 [[Conclusion](#conclusion)]
 ___
 
 
 ## <a name="project_description"></a>Project Description:
+
+
+[[Back to top](#top)]
+
+***
+## <a name="project_goal"></a>Project Goal:
 The goal of this project is to use natural language processing and classification models to identify terms for predicting a readme's primary language on Github.
 
 [[Back to top](#top)]
+
 
 ***
 ## <a name="planning"></a>Project Planning: 
@@ -104,72 +111,12 @@ The goal of this project is to use natural language processing and classificatio
 ## <a name="explore"></a>Data Exploration:
 [[Back to top](#top)]
 - Python files used for exploration:
-    - wrangle.py 
-    - explore.py
+    - acquire.py 
+    - prepare.py
     - modeling.py
 
 
 ### Takeaways from exploration:
-
-
-***
-
-## <a name="stats"></a>Statistical Analysis
-[[Back to top](#top)]
-
-### Stats Test 1: ANOVA Test: One Way
-
-Analysis of variance, or ANOVA, is a statistical method that separates observed variance data into different components to use for additional tests. 
-
-A one-way ANOVA is used for three or more groups of data, to gain information about the relationship between the dependent and independent variables: in this case our clusters vs. the log_error, respectively.
-
-To run the ANOVA test in Python use the following import: \
-<span style="color:green">from</span> scipy.stats <span style="color:green">import</span> f_oneway
-
-- f_oneway, in this case, takes in the individual clusters and returns the f-statistic, f, and the p_value, p:
-    - the f-statistic is simply a ratio of two variances. 
-    - The p_vlaue is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-
-
-#### Summary:
-
-
-### Stats Test 2: T-Test: One Sample, Two Tailed
-- A T-test allows me to compare a categorical and a continuous variable by comparing the mean of the continuous variable by subgroups based on the categorical variable
-- The t-test returns the t-statistic and the p-value:
-    - t-statistic: 
-        - Is the ratio of the departure of the estimated value of a parameter from its hypothesized value to its standard error. It is used in hypothesis testing via Student's t-test. 
-        - It is used in a t-test to determine if you should support or reject the null hypothesis
-        - t-statistic of 0 = H<sub>0</sub>
-    -  - the p-value:
-        - The probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-- We wanted to compare the individual clusters to the total population. 
-    - Cluster1 to the mean of ALL clusters
-    - Cluster2 to the mean of ALL clusters, etc.
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is 
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-
-#### Results:
-
-
-#### Summary:
 
 ***
 
