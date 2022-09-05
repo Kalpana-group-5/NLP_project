@@ -73,6 +73,18 @@ def remove_stopwords(string, extra_words=None, exclude_words=None):
     return filtered_string
 
 
+def lemmatize(article: str):
+    """ Accepts string as argument, article, and returns text after applying lemmatization to each word """
+    
+    wnl = nltk.stem.WordNetLemmatizer()
+        
+    lemmas = [wnl.lemmatize(word) for word in article.split()]
+    article_lemmatized = ' '.join(lemmas)
+
+    return article_lemmatized
+
+
+
 def prepare_df(df):
     """Adds columns for cleaned, stemmed, and lemmatized data in dataframe. 
     Also adds in columns calculating the lengths and word counts. """
