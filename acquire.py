@@ -63,7 +63,7 @@ def get_github_repos(cached=False, num_pages = 100):
 
 # REPOS = ['SJang1/korea-covid-19-remaining-vaccine-macro', 'bradtraversy/50projects50days', 'freeCodeCamp/freeCodeCamp']
 
-REPOS = get_github_repos()
+
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
@@ -135,10 +135,8 @@ def process_repo(repo: str) -> Dict[str, str]:
     }
 
 
-def scrape_github_data() -> List[Dict[str, str]]:
-    """
-    Loop through all of the repos and process them. Returns the processed data.
-    """
+def scrape_github_data():
+    REPOS = get_github_repos()
     return [process_repo(repo) for repo in REPOS]
 
 

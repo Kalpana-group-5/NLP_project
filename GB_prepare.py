@@ -23,6 +23,8 @@ from scipy.stats import zscore
 
 def basic_clean(string):
     
+    string = string.lower()
+    
     string = unicodedata.normalize('NFKD', string).encode('ascii', 'ignore').decode('utf-8', 'ignore')
     
     string = re.sub(r"[^a-z0-9\s']", '', string).lower()
