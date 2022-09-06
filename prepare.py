@@ -103,15 +103,19 @@ def prepare_df(df, column, extra_words = [], exclude_words = []):
                                                        exclude_words = exclude_words)
     
     # Calculates total length of readme based on number of characters
+    #this is not 100% necessary but it some good extra info to have
     df['original_length'] = df[column].str.len()
     df['stem_length'] = df.stemmed.str.len()
     df['lem_length'] = df.lemmatized.str.len()
 
     # Calculates total number of words (splitting up by whitespace)
+    #this is not 100% necessary but it some good extra info to have 
     df['original_word_count'] = df[column].str.split().str.len()
     df['stemmed_word_count'] = df.stemmed.str.split().str.len()
     df['lemmatized_word_count'] = df.lemmatized.str.split().str.len()
 
+    #this is to do a fill na to the anguages that are nulls
+    df['language'] = df.language.fillna(value='No Language')
     return df
 
     
