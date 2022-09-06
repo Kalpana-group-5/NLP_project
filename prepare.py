@@ -116,6 +116,9 @@ def prepare_df(df, column, extra_words = [], exclude_words = []):
 
     #this is to do a fill na to the anguages that are nulls
     df['language'] = df.language.fillna(value='No Language')
+
+    #There are two categories Java and javascript I decided to combine the two 
+    df = df.replace('Java', 'JavaScript')
     return df
 
     
