@@ -115,19 +115,14 @@ def prepare_df(df, column, extra_words = [], exclude_words = []):
     return df
 
     
-def train_validate_test_split(df, target, seed=123):
+def train_validate_test_split(df):
     '''
-    This function takes in a dataframe, the name of the target variable
-    (for stratification purposes), and an integer for a setting a seed
-    and splits the data into train, validate and test. 
-    Test is 20% of the original dataset, validate is .30*.80= 24% of the 
-    original dataset, and train is .70*.80= 56% of the original dataset. 
-    The function returns, in this order, train, validate and test dataframes. 
+    This function performs split on github repos data, since there is not enough categories in language we will not stratify.
+    Returns train, validate, and test dfs.
     '''
     train_validate, test = train_test_split(df, test_size=0.2, 
-                                            random_state=seed, 
-                                            stratify=df[target])
+                                        random_state=123)
     train, validate = train_test_split(train_validate, test_size=0.3, 
-                                       random_state=seed,
-                                       stratify=train_validate[target])
+                                   random_state=123)
+
     return train, validate, test
