@@ -10,6 +10,7 @@ import os
 import json
 from typing import Dict, List, Optional, Union, cast
 import requests
+from tqdm.notebook import tqdm_notebook
 
 from env import github_token, github_username
 
@@ -26,7 +27,7 @@ def fetch_github_repos(num_pages):
     # to make this simple, we will grab repos with the most forks and with stars > 1
     # the top pages have the format https://github.com/search?o=desc&p=1&q=stars%3A%3E1&s=forks&type=Repositories
     # so we need to increment the p= parameter to go to each subsequent page
-    for i in range(1,num_pages+1):
+    for i in tqdm_notebook(range(1,num_pages+1), desc = 'Retreiving data'):
         # add a sleep amount of random time so that we don't get HTTP 429s
         time.sleep(2.5)
         headers = {'User-Agent': 'Codeup Data Science'} # Some websites don't accept the pyhon-requests default user-agent
@@ -137,9 +138,22 @@ def process_repo(repo: str) -> Dict[str, str]:
 
 def scrape_github_data():
     REPOS = get_github_repos()
-    return [process_repo(repo) for repo in REPOS]
+    return [process_repo(repo) for repo in tqdm_notebook(REPOS, desc = 'Populating DataFrame')]
 
 
 if __name__ == "__main__":
     data = scrape_github_data()
     json.dump(data, open("data2.json", "w"), indent=1)
+    
+def github_df():
+    if os.path.isfile('github_df.csv') == False:
+        df = scrape_github_data()
+        df = pd.DataFrame(df)
+        df.to_csv('github_df.csv', index=False)
+    else:
+        # read from the cache file on disk
+        df = pd.read_csv("github_df.csv")
+        
+    return df
+
+    
