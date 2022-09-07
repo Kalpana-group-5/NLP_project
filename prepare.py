@@ -84,9 +84,11 @@ def lemmatize(article: str):
 
 
 
-def prepare_df(df, column, extra_words = [], exclude_words = []):
+def prepare_df(df, column, exclude_words = []):
     """Adds columns for cleaned, stemmed, and lemmatized data in dataframe. 
     Also adds in columns calculating the lengths and word counts. """
+    
+    extra_words = ['also', '&#9', 'e', 'f', 'ou', 'et', 'n', '1', "'", ';', '3', 'e', 'p']
     
     #dropping all Nulls 
     df = df.dropna()
