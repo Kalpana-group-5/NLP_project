@@ -119,7 +119,8 @@ def prepare_df(df, column, extra_words = [], exclude_words = []):
 
     #There are two categories Java and javascript I decided to combine the two 
     df = df.replace('Java', 'JavaScript')
-    
+    #dropping all Nulls 
+    df = df.dropna()
     #In order for the model to work correctly, there must be at least 2 instances of each language. 
     #Below we drop the languages that only ppear once
     df.language = df.language.str.replace(' ','')
