@@ -24,9 +24,9 @@ import time
 # goes to github and pages through the most forked repos, grabbing the 'num_pages' number of pages
 def fetch_github_repos(num_pages):
     items_list = []
-    # to make this simple, we will grab repos with the most forks and with stars > 1
-    # the top pages have the format https://github.com/search?o=desc&p=1&q=stars%3A%3E1&s=forks&type=Repositories
-    # so we need to increment the p= parameter to go to each subsequent page
+    # we will grab repos filtering by which ones have a readme file
+    # we increment the p= parameter to go to each subsequent page, and utilize the tqdm process bar to maintain sanity
+    # this function takes roughly 45 minutes to run
     for i in tqdm_notebook(range(1,num_pages+1), desc = 'Retreiving data'):
         # add a sleep amount of random time so that we don't get HTTP 429s
         time.sleep(2.5)
@@ -47,7 +47,7 @@ def fetch_github_repos(num_pages):
 # returns a list of github repo names, either from a file on disk or from github using the fetch_github_repos function
 def get_github_repos(cached=False, num_pages = 100):
     # If the cached parameter is false, or the csv file is absent, use github
-    if cached == False or os.path.isfile('git_urls.csv') == False:
+    if os.path.isfile('git_urls.csv') == False:
         # read from github
         repo_list = fetch_github_repos(num_pages)
         # and write to the cache file for next time
@@ -62,7 +62,6 @@ def get_github_repos(cached=False, num_pages = 100):
     return repo_list
 
 
-# REPOS = ['SJang1/korea-covid-19-remaining-vaccine-macro', 'bradtraversy/50projects50days', 'freeCodeCamp/freeCodeCamp']
 
 
 

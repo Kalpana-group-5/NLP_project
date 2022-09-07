@@ -119,6 +119,17 @@ def prepare_df(df, column, extra_words = [], exclude_words = []):
 
     #There are two categories Java and javascript I decided to combine the two 
     df = df.replace('Java', 'JavaScript')
+    
+    #In order for the model to work correctly, there must be at least 2 instances of each language. 
+    #Below we drop the languages that only ppear once
+    df.language = df.language.str.replace(' ','')
+    top_5 = ['JavaScript','Python','TypeScript','Shell','C#']
+    
+    for language in df.language.tolist():
+        if language not in top_5:
+            df.language = df.language.replace(language, 'other')
+        else:
+            continue
     return df
 
     
@@ -127,9 +138,9 @@ def train_validate_test_split(df):
     This function performs split on github repos data, since there is not enough categories in language we will not stratify.
     Returns train, validate, and test dfs.
     '''
-    train_validate, test = train_test_split(df, test_size=0.2, 
-                                        random_state=123)
-    train, validate = train_test_split(train_validate, test_size=0.3, 
-                                   random_state=123)
+    train_validate, test = train_test_split(df,stratify=df.language, test_size=0.2, 
+                                       random_state=123)
+    train, validate = train_test_split(train_validate, stratify=train_validate.language, test_size=0.3, 
+                                       random_state=123)
 
     return train, validate, test
