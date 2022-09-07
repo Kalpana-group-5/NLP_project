@@ -71,10 +71,6 @@ The goal of this project is to use natural language processing and classificatio
     - This is a short 5 minuite presentaion 
 - Our final Notebook contaning specific details of the code necessary for our presentaion 
 
-### Nice to haves (With more time):
-
-
-
 ***
 
 ## <a name="findings"></a>Key Findings:
@@ -88,26 +84,31 @@ The goal of this project is to use natural language processing and classificatio
 ## <a name="dictionary"></a>Data Dictionary  
 [[Back to top](#top)]
 
-### Data Used
----
+
 | Attribute | Definition | Data Type |
 | ----- | ----- | ----- |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+|Repo|The username of the REPO |Object|
+|readme_contents|What is inside the readme|Object|
+|language|the programming language|Object|
+|lemmatized|prepared data|Object|
 
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
+
+### Acquiring the Data 
+
+- To acquire the data first we needed to scrape the links for the individual repos from github by iterating through the pages of search results and grabbing the 10 links from each page.
+
+- Once this step was completed we were able to populate a dataframe with the name of the repo, the main coding language, and the contents of the README file associated with the repo by utilizing different functions that gathered those pieces of data from the github API.
+
+- Both process were wrapped in a TQDM progress bar because the acquisition took about 45 minutes altogether, and having a progress bar allowed us to know if the function was still working, or if it had timed out.
+
+### Preparing/Wrangling the Data
+
 [[Back to top](#top)]
 
 ![]()
-
-
-### Wrangle steps: 
 
 
 *********************
@@ -127,70 +128,50 @@ The goal of this project is to use natural language processing and classificatio
 [[Back to top](#top)]
 
 ### Model Preparation:
-
-### Baseline
-    
-- Baseline Results: 
-    
-
-- Selected features to input into models:
-    - features = []
-
-***
-
-### Models and R<sup>2</sup> Values:
-- Will run the following regression models:
-
-    
-
-- Other indicators of model performance with breif defiition and why it's important:
-
-    
-    
-#### Model 1: Linear Regression (OLS)
-
-
-- Model 1 results:
-
-
-
-### Model 2 : Lasso Lars Model
-
-
-- Model 2 results:
-
-
-### Model 3 : Tweedie Regressor (GLM)
-
-- Model 3 results:
-
-
-### Model 4: Quadratic Regression Model
-
-- Model 4 results:
-
-
+### Models Used:
+- Will run the following Classification models:
+  - Logistic Regression Model
+  - Random Forest
+  - Stochastic Gradient Descent (SGD)   
+  -  
 ## Selecting the Best Model:
 
 ### Use Table below as a template for all Modeling results for easy comparison:
 
-| Model | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
+| Model | Accuracy (Train) | Accuracy (Test) |
 | ---- | ----| ---- |
-| Baseline | 0.167366 | 2.2204 x 10<sup>-16</sup> |
-| Linear Regression (OLS) | 0.166731 | 2.1433 x 10<sup>-3</sup> |  
-| Tweedie Regressor (GLM) | 0.155186 | 9.4673 x 10<sup>-4</sup>|  
-| Lasso Lars | 0.166731 | 2.2204 x 10<sup>-16</sup> |  
-| Quadratic Regression | 0.027786 | 2.4659 x 10<sup>-3</sup> |  
+| Logistic Regression Model | 0.84 | 0.60 |  
+| Random Forest | 0.89 | 0.60|  
+| Stochastic Gradient Descent (SGD) | 1.0 | 0.59 |       
 
 
-- {} model performed the best
+#### Model 1: Logistic Regression Model
 
+- Model 1 accuracy results:
+      - 84% accuracy on Train
+      - 60% accuracy on Test
 
-## Testing the Model
+### Model 2 : Random Forest
 
-- Model Testing Results
+- Model 2 results:   
+  - 89% accuracy on Train
+  - 60% accuracy on Test
+
+### Model 3 : Stochastic Gradient Descent (SGD)
+
+- Model 3 results:
+  - 100% accuracy on Train
+  - 59% accuracy on Test
+
+## - Logistic Regression Model performed the best
+
 
 ***
 
 ## <a name="conclusion"></a>Conclusion:
 [[Back to top](#top)]
+
+
+
+### Nice to haves (With more time):
+ With more time we could try to create models for each language
