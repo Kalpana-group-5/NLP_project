@@ -38,6 +38,11 @@ ___
 
 ## <a name="project_description"></a>Project Description:
 
+In our project we have collected 100 README files from GitHub and used Machine Learning classification Models to predict the primary programming language when using the search term "Spotify". Our main goal is to identify terms for predicting a readme's primary language on GitHub.
+
+This project involves Data cleaning, Preparation, Exploration and Modeling.
+
+
 
 [[Back to top](#top)]
 
@@ -53,19 +58,18 @@ The goal of this project is to use natural language processing and classificatio
 [[Back to top](#top)]
 
 ### Project Outline:
-
-
-        
-### Hypothesis
-
-
-
-### Target variable
+### Initial Questions
+ - What are the top 5 programming languages when searching for 'Spotify' repos on github?
+ - What are the most common words we would see when searching for spotify README's
+ - From these top 5 programing languages what are the most common words from these languages 
+ - What are some common bigrams in the languages when using these bigrams
 
 
 ### Need to haves (Deliverables):
 
-
+- Here is a link to our Canva Presentaion 
+    - This is a short 5 minuite presentaion 
+- Our final Notebook contaning specific details of the code necessary for our presentaion 
 
 ### Nice to haves (With more time):
 
@@ -113,7 +117,6 @@ The goal of this project is to use natural language processing and classificatio
 - Python files used for exploration:
     - acquire.py 
     - prepare.py
-    - modeling.py
 
 
 ### Takeaways from exploration:
