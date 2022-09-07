@@ -139,7 +139,7 @@ The goal of this project is to use natural language processing and classificatio
 ### Use Table below as a template for all Modeling results for easy comparison:
 
 | Model | Accuracy (Train) | Accuracy (Test) | Diffrence |
-| ---- | ----| ---- |
+| ---- | ----| ---- |---- |
 | Logistic Regression Model | 0.84 | 0.60 |  0.24|
 | Random Forest | 0.89 | 0.60| 0.29| 
 | Stochastic Gradient Descent (SGD) | 1.0 | 0.59 |0.41|     
