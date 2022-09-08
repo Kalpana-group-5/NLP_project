@@ -106,6 +106,26 @@ The goal of this project is to use natural language processing and classificatio
 
 ### Preparing/Wrangling the Data
 
+What we did to prepare the data
+lowercase the readme contents to avoid case sensitivity
+
+remove any inconsistencies in unicode character encoding
+
+remove special characters, such as non-alphanumeric characters that could cause extra noise
+
+tokenize the data
+
+stemming the data
+
+apply lemmatization
+
+remove unnecessary stopwords
+
+remove where the readme contents were null
+
+generate additional features for exploration and modeling such as README length and word counts
+
+
 [[Back to top](#top)]
 
 ![]()
