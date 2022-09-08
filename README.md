@@ -73,14 +73,6 @@ The goal of this project is to use natural language processing and classificatio
 
 ***
 
-## <a name="findings"></a>Executive Summary:
-[[Back to top](#top)]
-
-
-
-
-***
-
 ## <a name="dictionary"></a>Data Dictionary  
 [[Back to top](#top)]
 
