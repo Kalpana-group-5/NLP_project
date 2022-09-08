@@ -160,14 +160,13 @@ __Each of the top 5 programing languages have relatively specific bigrams when l
 
 - Model 1 accuracy results:
       - 82% accuracy on Train
-      - 61% accuracy on Test
 
 
 ### Model 2 : Stochastic Gradient Descent (SGD)
 
 - Model 2 results:
   - 97% accuracy on Train
-  - 58% accuracy on Test
+  
   
 ### Model 3 : Random Forest
 
