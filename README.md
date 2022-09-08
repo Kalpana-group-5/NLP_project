@@ -122,6 +122,18 @@ The goal of this project is to use natural language processing and classificatio
 
 ### Takeaways from exploration:
 
+__The top 5 Programing languages are__
+- JavaScript
+- Python
+- TypeScript
+- Shell
+- C#
+
+__The most commonly used top ten words have between 770 and nearly 3000 specific uses, respectively__
+
+
+__Each of the top 5 programing languages have relatively specific bigrams when looking at most used__
+
 ***
 
 ## <a name="model"></a>Modeling:
@@ -140,38 +152,49 @@ The goal of this project is to use natural language processing and classificatio
 
 | Model | Accuracy (Train) | Accuracy (Test) | Diffrence |
 | ---- | ----| ---- |---- |
-| Logistic Regression Model | 0.84 | 0.60 |  0.24|
-| Random Forest | 0.89 | 0.60| 0.29| 
-| Stochastic Gradient Descent (SGD) | 1.0 | 0.59 |0.41|     
+| Logistic Regression Model | 0.82 | 0.61 |  0.21|
+| Stochastic Gradient Descent (SGD) | 0.97 | 0.58 |0.39| 
+| Random Forest | 0.87 | 0.62| 0.25| 
 
-
-#### Model 1: Logistic Regression Model
+### Model 1: Logistic Regression Model
 
 - Model 1 accuracy results:
-      - 84% accuracy on Train
-      - 60% accuracy on Test
+      - 82% accuracy on Train
+      - 61% accuracy on Test
 
-### Model 2 : Random Forest
 
-- Model 2 results:   
-  - 89% accuracy on Train
-  - 60% accuracy on Test
+### Model 2 : Stochastic Gradient Descent (SGD)
 
-### Model 3 : Stochastic Gradient Descent (SGD)
+- Model 2 results:
+  - 97% accuracy on Train
+  - 58% accuracy on Test
+  
+### Model 3 : Random Forest
 
-- Model 3 results:
-  - 100% accuracy on Train
-  - 59% accuracy on Test
+- Model 3 results:   
+  - 87% accuracy on Train
+  - 62% accuracy on Test
+  
+***
 
-## - Logistic Regression Model performed the best
-
+## - Random Forest Performed the Best @ 62% Test Accuracy
 
 ***
 
-## <a name="conclusion"></a>Conclusion:
-[[Back to top](#top)]
+# <a name="conclusion"></a>Conclusion: 
 
+## Key Items
 
+- After testing multiple models, our best performer turned out to be random forest at 62%
 
-### Nice to haves (With more time):
- With more time we could try to create models for each language
+- Through exploration we found that each programming language does have its own unique distribution of words
+
+## Recomendations
+
+- For the time being this model should be implemented until a better model can be implemented at a later date
+
+## What's Next?
+
+- With a many model approach based on each language as a target variable we may be able to create a model with much more accuracy at pinpointing select programming languages based on README text.
+
+- through the use of many models we may better be able to make models detect more obscure languages along with the more commonly used ones.
